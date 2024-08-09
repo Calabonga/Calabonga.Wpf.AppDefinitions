@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Calabonga.AspWpf.AppDefinitions</Title>
 		<Copyright>Calabonga SOFT</Copyright>
-		<Version>1.0.0-beta.9</Version>
+		<Version>1.0.0-beta.10</Version>
 		<Description>Application Definitions base classes. The small but very helpful packege that can help you to organize your WPF application.</Description>
 		<Copyright>Calabonga SOFT © 2001-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
 		<PackageProjectUrl>https://github.com/Calabonga/Calabonga.Wpf.AppDefinitions</PackageProjectUrl>
