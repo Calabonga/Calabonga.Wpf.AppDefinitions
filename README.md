@@ -4,6 +4,10 @@
 
 ## Что нового
 
+### v1.0.0 2024-09-02
+
+* Первый релиз сборки [nuget-пакета](https://www.nuget.org/packages/Calabonga.Wpf.AppDefinitions/).
+
 ### v1.0.0-beta.10
 
 * Удалено ненужное свойство `ApplicationOrderIndex` из `IAppDefinition` и из реализации в том числе.
