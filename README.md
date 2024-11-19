@@ -4,6 +4,10 @@
 
 ## Что нового
 
+### v2.0.0 2024-11-19
+
+* Миграция на NET9
+
 ### v1.0.0 2024-09-02
 
 * Первый релиз сборки [nuget-пакета](https://www.nuget.org/packages/Calabonga.Wpf.AppDefinitions/).
