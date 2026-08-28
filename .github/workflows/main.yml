@@ -21,10 +21,10 @@ jobs:
           dotnet-version: 10.0.x
 
       - name: Install dependencies
-        run: dotnet restore src/Calabonga.Wpf.AppDefinitions.sln
+        run: dotnet restore src/Calabonga.Wpf.AppDefinitions/Calabonga.Wpf.AppDefinitions.csproj
 
       - name: Pack the NuGet package
-        run: dotnet pack src/Calabonga.Wpf.AppDefinitions.sln --configuration Release --no-restore --output "${{ github.workspace }}/artifacts"
+        run: dotnet pack src/Calabonga.Wpf.AppDefinitions/Calabonga.Wpf.AppDefinitions.csproj --configuration Release --no-restore --output "${{ github.workspace }}/artifacts"
 
       - name: Publish NuGet Package
         run: dotnet nuget push "${{ github.workspace }}/artifacts/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
