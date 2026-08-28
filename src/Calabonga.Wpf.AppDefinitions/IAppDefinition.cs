@@ -19,11 +19,6 @@ public interface IAppDefinition
     int ServiceOrderIndex { get; }
 
     /// <summary>
-    /// Order index for including into pipeline for ConfigureApplication() . Default value is 0 for, that's why order index can be undefined.
-    /// </summary>
-    int ApplicationOrderIndex { get; }
-
-    /// <summary>
     /// Enable or disable to register into pipeline for the current application Definition.
     /// </summary>
     /// <remarks>Default values is <c>True</c></remarks>
