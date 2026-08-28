@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: dotnet restore src/Calabonga.Wpf.AppDefinitions/Calabonga.Wpf.AppDefinitions.csproj
 
-      - name: Pack the NuGet package
-        run: dotnet pack src/Calabonga.Wpf.AppDefinitions/Calabonga.Wpf.AppDefinitions.csproj --configuration Release --no-restore --output "${{ github.workspace }}/artifacts"
+      - name: Build and pack the NuGet package
+        run: dotnet build src/Calabonga.Wpf.AppDefinitions/Calabonga.Wpf.AppDefinitions.csproj --configuration Release --no-restore
 
       - name: Publish NuGet Package
-        run: dotnet nuget push "${{ github.workspace }}/artifacts/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push "src/Calabonga.Wpf.AppDefinitions/bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
