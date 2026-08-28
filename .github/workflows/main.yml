@@ -27,4 +27,11 @@ jobs:
         run: dotnet build src/Calabonga.Wpf.AppDefinitions/Calabonga.Wpf.AppDefinitions.csproj --configuration Release --no-restore
 
       - name: Publish NuGet Package
-        run: dotnet nuget push "src/Calabonga.Wpf.AppDefinitions/bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        shell: pwsh
+        run: |
+          $package = Get-ChildItem src/Calabonga.Wpf.AppDefinitions/bin/Release/*.nupkg |
+            Where-Object { $_.Name -notlike '*.symbols.nupkg' } |
+            Select-Object -First 1
+          if (-not $package) { throw 'No .nupkg found in bin/Release' }
+          Write-Host "Pushing $($package.Name)"
+          dotnet nuget push $package.FullName --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
